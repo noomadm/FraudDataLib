@@ -18,7 +18,7 @@ public interface TaskDistributorRepository extends PagingAndSortingRepository<Ca
 
 	@Query(value = "select distinct mula.user_id \n"
 			+ "from mnt_user_login_attemp mula\n"
-			+ "left join (select user_id,count(*) taskCount from mnt_case where status not in ('CLOSED_FRAUD','CLOSED_NOT_FRAUD','DRAFT') and user_id is null group by user_id) caseCount on mula.user_id = caseCount.user_id \n"
+			+ "left join (select user_id,count(*) taskCount from mnt_case where status in ('PENDING','ASSIGNED','ASSIGNED_BY_SUP') and user_id is not null group by user_id) caseCount on mula.user_id = caseCount.user_id \n"
 			+ "where mula.user_id in\n"
 			+ "(\n"
 			+ "	select u.id from mnt_user_group mug \n"
