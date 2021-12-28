@@ -25,6 +25,7 @@ public class Notification {
 	private String updated_by;
 	private Timestamp updated_datetime;
 	private Boolean active;
+	private Long alert_id;
 	
 	
 	public long getId() {
@@ -92,6 +93,12 @@ public class Notification {
 	}
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+	public Long getAlert_id() {
+		return alert_id;
+	}
+	public void setAlert_id(Long alert_id) {
+		this.alert_id = alert_id;
 	}
 	
 	
