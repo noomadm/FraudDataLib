@@ -99,7 +99,7 @@ public interface DTJRepository extends CrudRepository<DTJ, Long>{
 	public Long countTransactionWithinDate(
 			@Param("accountNumber")String accountNumber,
 			@Param("startDate")Date startDate,
-			@Param("endDate")Date endDate,
+			@Param("endDate")Timestamp endDate,
 			@Param("tranTypes")List<String> tranTypes);
 	
 	@Query(value="select * from mnt_dtj where trans_date = :trans_date and account_number = :account_number and trans_sequence_no = :trans_sequence_no",nativeQuery = true)
@@ -131,10 +131,12 @@ public interface DTJRepository extends CrudRepository<DTJ, Long>{
 			@Param("accountNumber") String accountNumber,
 			@Param("dateTime") Date dateTime);
 	
-	@Query(value = "select count(*) from mnt_dtjfm md \n"
-			+ "where has_change_ac_status = true --\n"
-			+ "and change_status_from in ('2','1') and change_status_to = '0'\n"
-			+ "and trans_date = :date\n"
-			+ "and account_number = :accountNumber",nativeQuery = true)
-	public int hasChangeStatusToActive(@Param("accountNumber")String accountNumber,@Param("date")Date date);
+	@Query(value = "select count(*) "
+			+ "from mnt_dtjfm "
+			+ "where trans_date = :date "
+			+ "and account_number like :accountNumber "
+			+ "and data_item_changed = 'STAT' "
+			+ "and trim(new_value_unformat) = '0' "
+			+ "and (old_value like '1%' or old_value like '2%')",nativeQuery = true)
+	public Integer hasChangeStatusToActive(@Param("accountNumber")String accountNumber,@Param("date")Date date);
 }
