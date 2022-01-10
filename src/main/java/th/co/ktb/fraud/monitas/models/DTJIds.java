@@ -3,6 +3,7 @@ package th.co.ktb.fraud.monitas.models;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 public class DTJIds implements Serializable{
 
@@ -14,6 +15,7 @@ public class DTJIds implements Serializable{
 	public Date getTrans_date() {
 		return trans_date;
 	}
+	
 	public void setTrans_date(Date trans_date) {
 		this.trans_date = trans_date;
 	}
