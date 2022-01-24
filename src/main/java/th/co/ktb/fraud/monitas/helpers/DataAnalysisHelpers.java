@@ -18,7 +18,7 @@ public class DataAnalysisHelpers {
 		columns.add(new PatternAnalysisColumnConfig("area", "Fraud Area"));
 		columns.add(new PatternAnalysisColumnConfig("rule_name", "Scenario No."));
 		columns.add(new PatternAnalysisColumnConfig("trans_date", "Trxn Date","date","DD/MM/YYYY"));
-		columns.add(new PatternAnalysisColumnConfig("trans_date", "Trxn Time","date","HH:mm"));
+		columns.add(new PatternAnalysisColumnConfig("clock_time", "Trxn Time","clock_time","HH:mm"));
 		columns.add(new PatternAnalysisColumnConfig("trans_amount", "Trxn Amount","number",null));
 		columns.add(new PatternAnalysisColumnConfig("card_no", "Card No.","number","#### #### #### ####",false)); // not found
 		columns.add(new PatternAnalysisColumnConfig("from_card_no", "From Cust No.",false)); // not found

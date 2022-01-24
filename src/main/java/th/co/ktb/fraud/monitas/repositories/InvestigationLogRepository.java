@@ -23,7 +23,8 @@ public interface InvestigationLogRepository  extends CrudRepository<Investigatio
 	public List<Map<String,Object>> getInvestigationLog(@Param("caseId") long caseId);
 	
 	@Query(value = "select \n"
-			+ "trans_amount,\n"
+			+ "trans_amount"
+			+ "trans_date,\n"
 			+ "ending_balance,\n"
 			+ "ovrid ,"
 			+ "beneficiary_code as bank_code, "
@@ -34,7 +35,8 @@ public interface InvestigationLogRepository  extends CrudRepository<Investigatio
 	public Map<String,Object> getTransactionInfo(@Param("trxnCode")Long trxnCode,@Param("area")String area);
 	
 	@Query(value = "select \n"
-			+ "trans_amount,\n"
+			+ "trans_amount,"
+			+ "trans_date,\n"
 			+ "ending_balance,\n"
 			+ "ovrid ,"
 			+ "beneficiary_code as bank_code, "

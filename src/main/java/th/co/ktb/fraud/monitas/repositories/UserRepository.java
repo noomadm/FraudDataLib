@@ -40,7 +40,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 	@Query("SELECT u FROM User u WHERE USERNAME = :username")
 	public User getUserByUsername(@Param("username") String username);
 
-	@Query("SELECT u FROM UserGroup ug JOIN ug.user u WHERE ug.group_id = :groupId or :groupId is null")
+	@Query("SELECT u FROM UserGroup ug JOIN ug.user u WHERE ug.group_id = :groupId or :groupId is null order by u.username")
 	public List<User> getUserByGroup(@Param("groupId") int groupId);
 
 	@Modifying

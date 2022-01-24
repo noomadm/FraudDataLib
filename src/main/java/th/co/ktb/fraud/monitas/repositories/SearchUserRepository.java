@@ -15,6 +15,7 @@ public interface SearchUserRepository extends PagingAndSortingRepository<User, I
 	@Query("SELECT c FROM User c WHERE "
 			+ "( upper(username) like %:keyword% "
 			+ "or upper(firstname) like %:keyword% "
+			+ "or upper(lastname) like %:keyword% "
 			+ "or upper(email) like %:keyword% "
 			+ "or mobile like %:keyword%)")
 	public Page<User> findUser(@Param("keyword") String keyword,Pageable pagable);
