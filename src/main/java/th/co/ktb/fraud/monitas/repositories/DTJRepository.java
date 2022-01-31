@@ -135,7 +135,7 @@ public interface DTJRepository extends CrudRepository<DTJ, Long>{
 			+ "from mnt_dtjfm "
 			+ "where trans_date = :date "
 			+ "and account_number like :accountNumber "
-			+ "and data_item_changed = 'STAT' "
+			+ "and data_item_changed like '%STAT%' "
 			+ "and trim(new_value_unformat) = '0' "
 			+ "and (old_value like '1%' or old_value like '2%')",nativeQuery = true)
 	public Integer hasChangeStatusToActive(@Param("accountNumber")String accountNumber,@Param("date")Date date);
