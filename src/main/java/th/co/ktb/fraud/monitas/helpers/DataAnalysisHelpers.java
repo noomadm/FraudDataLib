@@ -35,7 +35,7 @@ public class DataAnalysisHelpers {
 		columns.add(new PatternAnalysisColumnConfig("to_ac_branch_name", "To A/C Branch Name",false)); //not found
 		columns.add(new PatternAnalysisColumnConfig("to_ac_bank_code", "To A/C Bank Code",false)); //not found
 		columns.add(new PatternAnalysisColumnConfig("to_ac_province", "To A/C Province",false)); //not found
-		columns.add(new PatternAnalysisColumnConfig("trans_trace_number", "TRC"));
+		columns.add(new PatternAnalysisColumnConfig("external_trans_code", "TRC"));
 		columns.add(new PatternAnalysisColumnConfig("response_code", "Resp.Code"));
 		columns.add(new PatternAnalysisColumnConfig("ending_balance", "Available Balance","number",null));
 		columns.add(new PatternAnalysisColumnConfig("user_id", "Teller ID"));
