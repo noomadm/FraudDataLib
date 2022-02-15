@@ -22,7 +22,7 @@ public class DataAnalysisHelpers {
 		columns.add(new PatternAnalysisColumnConfig("trans_amount", "Trxn Amount","number",null));
 		columns.add(new PatternAnalysisColumnConfig("card_no", "Card No.","number","#### #### #### ####",false)); // not found
 		columns.add(new PatternAnalysisColumnConfig("from_card_no", "From Cust No.",false)); // not found
-		columns.add(new PatternAnalysisColumnConfig("from_account_no", "From A/C No.","number","###-####-##-#",false)); //not found
+		columns.add(new PatternAnalysisColumnConfig("from_account_no", "From A/C No.")); //not found
 		columns.add(new PatternAnalysisColumnConfig("from_branch_code", "From A/C Branch Code",false));
 		columns.add(new PatternAnalysisColumnConfig("from_branch_name", "From A/C Branch Name",false));
 		columns.add(new PatternAnalysisColumnConfig("from_bank_code", "From Bank Code",false)); //not found
@@ -30,10 +30,11 @@ public class DataAnalysisHelpers {
 		columns.add(new PatternAnalysisColumnConfig("from_ac_province", "From A/C Province",false)); //not found
 		columns.add(new PatternAnalysisColumnConfig("to_card_no", "To Cust No.",false)); //not found
 		columns.add(new PatternAnalysisColumnConfig("to_card_name", "To Card Name",false)); //not found
-		columns.add(new PatternAnalysisColumnConfig("to_ac_no", "To A/C No.","number","###-####-##-#",false)); //not found
-		columns.add(new PatternAnalysisColumnConfig("to_ac_branch_code", "To A/C Branch Code",false)); //not found
-		columns.add(new PatternAnalysisColumnConfig("to_ac_branch_name", "To A/C Branch Name",false)); //not found
-		columns.add(new PatternAnalysisColumnConfig("to_ac_bank_code", "To A/C Bank Code",false)); //not found
+		columns.add(new PatternAnalysisColumnConfig("to_account_no", "To A/C No.")); //not found
+		columns.add(new PatternAnalysisColumnConfig("to_branch_code", "To A/C Branch Code",false)); //not found
+		columns.add(new PatternAnalysisColumnConfig("to_branch_name", "To A/C Branch Name",false)); //not found
+		columns.add(new PatternAnalysisColumnConfig("to_bank_code", "To Bank Code",false)); //not found
+		columns.add(new PatternAnalysisColumnConfig("to_bank_name", "To Bank Name",false)); //not found
 		columns.add(new PatternAnalysisColumnConfig("to_ac_province", "To A/C Province",false)); //not found
 		columns.add(new PatternAnalysisColumnConfig("external_trans_code", "TRC"));
 		columns.add(new PatternAnalysisColumnConfig("response_code", "Resp.Code"));
