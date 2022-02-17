@@ -2,6 +2,7 @@ package th.co.ktb.fraud.monitas.repositories;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -56,6 +57,9 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
 	@Query("SELECT u FROM User u order by firstname,lastname")
 	public List<User> findUsers();
+	
+	@Query(value="SELECT u.id,u.username,u.firstname,u.lastname FROM mnt_user u order by firstname,lastname",nativeQuery = true)
+	public List<Map<String,Object>> getDDLUser();
 	
 	@Query("select u from User u where id = :id")
 	public User getUser(@Param("id") int id);
