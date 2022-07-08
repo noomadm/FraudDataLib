@@ -29,7 +29,7 @@ public interface TaskDistributorRepository extends PagingAndSortingRepository<Ca
 			+ "and taskcount is null",nativeQuery = true)
 	public List<Integer> getAvailableUserByGroups(@Param("groupIds")List<Double> groupIds);
 	
-	@Query("select c from Case c where status = 'PENDING'")
+	@Query("select c from Case c where status = 'PENDING' and user_id is null order by alert_datetime asc")
 	public Page<Case> getCaseToDistribute(Pageable pageable);
 	
 }
