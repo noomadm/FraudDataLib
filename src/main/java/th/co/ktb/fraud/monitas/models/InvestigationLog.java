@@ -23,7 +23,7 @@ import org.hibernate.annotations.NotFound;
 
 @Entity
 @Table(name = "MNT_CASE_HISTORY")
-public class InvestigationLog implements Serializable{
+public class InvestigationLog implements Serializable,Cloneable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -171,5 +171,10 @@ public class InvestigationLog implements Serializable{
 	public void setGroup_id(Integer group_id) {
 		this.group_id = group_id;
 	}
+	
+	public Object clone() throws CloneNotSupportedException
+    {
+        return super.clone();
+    }
 	
 }
